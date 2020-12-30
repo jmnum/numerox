@@ -205,15 +205,8 @@ class Data(object):
 
     @property
     def y_df(self):
-        "Copy of targets, y, as a dataframe"
-        columns = []
-        data = []
-        for number, name in nx.tournament_iter(active_only=True):
-            columns.append(name)
-            data.append(self.y[number].reshape(-1, 1))
-        data = np.hstack(data)
-        df = pd.DataFrame(data=data, columns=columns, index=self.ids)
-        return df
+        "target columns, 'target', as a dataframe (not a  copy)"
+        return data.df[['target']]
 
     @property
     def y(self):
