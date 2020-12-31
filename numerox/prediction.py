@@ -193,7 +193,7 @@ class Prediction(object):
     def pairs_df(self):
         "Bool dataframe with names as index and tournaments as columns"
         names = self.names()
-        tourns = nx.tournament_all(active_only=False)
+        tourns = nx.tournament_all(active_only=True)
         df = pd.DataFrame(index=names, columns=tourns)
         for name in names:
             for tourn in tourns:
@@ -450,7 +450,7 @@ class Prediction(object):
     def metric_per_tournament(self, data, metric='corr'):
         "DataFrame containing given metric versus tournament"
         dfs = []
-        for t_int, t_name in nx.tournament_iter(active_only=False):
+        for t_int, t_name in nx.tournament_iter(active_only=True):
             df, info = metrics_per_name(data,
                                         self,
                                         t_int,
