@@ -84,7 +84,7 @@ from numerox.stats import correlation_per_era
 from numerox.stats import mean_correlation
 from numerox.stats import sharpe
 from numerox.stats import autocorrelation
-from numerox.stats import fetaure_exposure
+from numerox.stats import feature_exposure
 
 try:
     from numpy.testing import Tester
