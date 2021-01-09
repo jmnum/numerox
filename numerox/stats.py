@@ -30,7 +30,7 @@ def autocorrelation(data,ppname):
     era_scores= correlation_per_era(data,ppname)['corr']
     return ar1(era_scores)
 
-def FeatExp(data,ppname):
+def feature_exposure(data,ppname):
     new_df=ppname.df
     new_df.columns=['pred']
     new_df=new_df.join(data.region_isin(['train','validation']).df,how='inner')
