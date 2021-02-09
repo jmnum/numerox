@@ -839,7 +839,7 @@ def load_prediction_csv(filename, name=None):
     df = pd.read_csv(filename, index_col='id')
     if df.shape[1] != 1:
         raise ValueError("csv file must contain one column of predictions")
-    tournament = nx.tournament_int(df.columns[0].split('_')[-1])
+    tournament = nx.tournament_int('kazutsugi')
     if name is None:
         name = os.path.split(filename)[-1]
         if name.endswith('.csv'):
